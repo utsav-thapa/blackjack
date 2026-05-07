@@ -31,10 +31,19 @@ public class Card {
             // A = 11
             // K, Q, J = 10
             // all numeric cards are equal to their face value
+            switch(this.value) {
+                case "K", "Q", "J":
+                    value = "10";
+                case "A":
+                    value = "11";
+                default:
+                    value = this.value;
+            }
+
         } else {
             return 0;
         }
-        return 1;
+        return Integer.parseInt(value);
 
     }
     public boolean isFaceUp(){
